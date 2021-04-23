@@ -32,7 +32,7 @@
 				{% endfor %}
 			</p>
 			<ul class="actions">
-				<li><a href="" class="button icon solid fa-chevron-down scrolly">Comments</a></li>
+				<li><a href="#two" class="button icon solid fa-chevron-down scrolly">Comments</a></li>
 			</ul>
 		</div>
 		<div class="image">
@@ -45,7 +45,29 @@
 	<section id="two" class="wrapper">
 		<div class="inner alt">
 			<h2>Comments</h2>
-
+			{% if comments|length > 1 %}
+			<a href="#comment-form" class="scrolly">(add comment)</a>
+			{% endif %}
+			{% for comment in comments %}
+			<section class="spotlight">
+				<div class="image"><a href="#header" class="scrolly"><img width=50
+							src="{% static 'images/pizzas/'|add:pizza.name|add:'.jpg' %}" alt="" /></a></div>
+				<div class="content">
+					<h5>{{comment.date_added}}</h5>
+					<p>{{comment}}</p>
+				</div>
+			</section>
+			{% endfor %}
+			<section id="comment-form" class="spotlight">
+				<form action="#two" method="post">
+					{% csrf_token %}
+					{{ form.as_p }}
+					<button name="submit">Add Comment</button>
+				</form>
+			</section>
+			<section class="spotlight">
+				<a href="#header" class="scrolly">(back to top)</a>
+			</section>
 		</div>
 	</section>
 
