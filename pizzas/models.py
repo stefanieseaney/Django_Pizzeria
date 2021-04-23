@@ -16,3 +16,13 @@ from django.db import models
 7) Create a form that allows users to post comments on 
    any particular pizza page
 """
+
+
+class Pizza(models.Model):
+    """Pizza creation."""
+
+    name = models.CharField(max_length=256)
+    data_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
