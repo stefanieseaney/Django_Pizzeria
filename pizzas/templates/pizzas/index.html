@@ -1,11 +1,62 @@
 {% block content %}
-
 {% load static %}
-
+<!DOCTYPE HTML>
+<!--
+	Fractal by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-<p>Stefanie's Pizzeria</p>
-<img src="{% static 'images/pizza-spinning.jpg' %}" alt="" />
+
+<head>
+	<title>Stefanie's Pizzeria</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+	<noscript>
+		<link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<div class="content">
+			<h1><a href="/">Stefanie's Pizzeria</a></h1>
+			<p>Our Mission is to provide our guests with a memorable <br />
+				and unique experience through the aromas of our pizzas <br />
+				baked in our Italian style ovens</p>
+			<ul class="actions">
+				<li><a href="" class="button icon solid fa-chevron-down scrolly">Our Delicious Pizzas</a></li>
+			</ul>
+		</div>
+		<div class="image phone">
+			<div class="inner"><a href=""><img src="{% static 'images/pizza-spinning.jpg' %}" alt="" /></a>
+			</div>
+		</div>
+	</header>
+
+
+	<!-- Footer -->
+	<footer id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+		</ul>
+		<!--p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a></p-->
+	</footer>
+
+	<!-- Scripts -->
+	<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+	<script src="{% static 'assets/js/browser.min.js' %}"></script>
+	<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+	<script src="{% static 'assets/js/util.js' %}"></script>
+	<script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
 
 </html>
-
 {% endblock content %}
