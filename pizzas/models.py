@@ -37,3 +37,14 @@ class Topping(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Comment(models.Model):
+    """Comment on a pizza"""
+
+    comment = models.CharField(max_length=1024)
+    pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.comment
