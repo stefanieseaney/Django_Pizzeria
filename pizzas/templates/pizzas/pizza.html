@@ -1,0 +1,73 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Fractal by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>{{pizza}} - Stefanie's Pizzeria</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+	<noscript>
+		<link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<div class="content">
+			<h2><a href="{% url 'pizzas:index' %}">Stefanie's Pizzeria</a></h2>
+			<h1>{{pizza}}</h1>
+			<h4>Toppings</h4>
+			<p>
+				{% for topping in toppings %}
+				{{ topping }}<br />
+				{% endfor %}
+			</p>
+			<ul class="actions">
+				<li><a href="" class="button icon solid fa-chevron-down scrolly">Comments</a></li>
+			</ul>
+		</div>
+		<div class="image">
+			<div class="inner"><img width=400 src="{% static 'images/pizzas/'|add:pizza.name|add:'.jpg' %}" alt="" />
+			</div>
+		</div>
+	</header>
+
+	<!-- Two -->
+	<section id="two" class="wrapper">
+		<div class="inner alt">
+			<h2>Comments</h2>
+
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+		</ul>
+		<!--p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a></p-->
+	</footer>
+
+	<!-- Scripts -->
+	<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+	<script src="{% static 'assets/js/browser.min.js' %}"></script>
+	<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+	<script src="{% static 'assets/js/util.js' %}"></script>
+	<script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
+{% endblock content %}

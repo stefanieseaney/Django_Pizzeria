@@ -7,77 +7,68 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+	<head>
+		<title>Pizzas - Stefanie's Pizzeria</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
 
-<head>
-    <title>Pizzas - Stefanie's Pizzeria</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
-    <noscript>
-        <link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" />
-    </noscript>
-</head>
+		<!-- Header -->
+			<header id="header">
+				<div class="content">
+					<h1><a href="/">Stefanie's Pizzeria</a></h1>
+					<p>Our Mission is to provide our guests with a memorable <br/>
+						 and unique experience through the aromas of our pizzas <br/>
+						 baked in our Italian style ovens.</p>
+					<ul class="actions">
+						<li><a href="#two" class="button icon solid fa-chevron-down scrolly">Our Delicious Pizzas</a></li>
+					</ul>
+				</div>
+				<div class="image phone"><div class="inner"><img src="{% static 'images/pizza-spinning.jpg' %}" alt="" /></div></div>
+			</header>
+		<!-- Two -->
+			<section id="two" class="wrapper">
+				<div class="inner alt">
+                    <h2>Our Delicious Pizzas</h2>
+                    {% for pizza in pizzas %}
+                    <section class="spotlight">
+                        <div class="image"><a href="{% url 'pizzas:pizza' pizza.id %}"><img src="{% static 'images/pizzas/'|add:pizza.name|add:'.jpg' %}" alt="" /></a></div>
+                        <div class="content">
+                            <h3><a href="{% url 'pizzas:pizza' pizza.id %}">{{ pizza }}</a></h3>
+                        </div>
+                        </a>
+                    </section>
+                    {% empty %}
+                    <section class="spotlight">
+                        <div class="image"><a href="% url 'pizzas:index'"><img src="{% static 'images/pizza-spinning.jpg' %}" alt="" /></a></div>
+                        <div class="content">
+                            <h3>No pizzas have been added yet!</h3>
+                        </div>
+                    </section>
+                    {% endfor %}
+				</div>
+			</section>
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				</ul>
+				<!--p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a></p-->
+			</footer>
 
-<body class="is-preload">
+		<!-- Scripts -->
+		<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+		<script src="{% static 'assets/js/browser.min.js' %}"></script>
+		<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+		<script src="{% static 'assets/js/util.js' %}"></script>
+		<script src="{% static 'assets/js/main.js' %}"></script>
 
-    <!-- Header -->
-    <header id="header">
-        <div class="content">
-            <h1><a href="/">Stefanie's Pizzeria</a></h1>
-            <p>Our Mission is to provide our guests with a memorable <br />
-                and unique experience through the aromas of our pizzas <br />
-                baked in our Italian style ovens.</p>
-            <ul class="actions">
-                <li><a href="#two" class="button icon solid fa-chevron-down scrolly">Our Delicious Pizzas</a></li>
-            </ul>
-        </div>
-        <div class="image phone">
-            <div class="inner"><img src="{% static 'images/pizza-spinning.jpg' %}" alt="" /></div>
-        </div>
-    </header>
-    <!-- Two -->
-    <section id="two" class="wrapper">
-        <div class="inner alt">
-            <h2>Our Delicious Pizzas</h2>
-            {% for pizza in pizzas %}
-            <section class="spotlight">
-                <div class="image"><a href=""><img src="{% static 'images/pizzas/'|add:pizza.name|add:'.jpg' %}"
-                            alt="" /></a></div>
-                <div class="content">
-                    <h3><a href="">{{ pizza }}</a></h3>
-                </div>
-                </a>
-            </section>
-            {% empty %}
-            <section class="spotlight">
-                <div class="image"><a href="% url 'pizzas:index'"><img src="{% static 'images/pizza-spinning.jpg' %}"
-                            alt="" /></a></div>
-                <div class="content">
-                    <h3>No pizzas have been added yet!</h3>
-                </div>
-            </section>
-            {% endfor %}
-        </div>
-    </section>
-    <!-- Footer -->
-    <footer id="footer">
-        <ul class="icons">
-            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-        </ul>
-        <!--p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a></p-->
-    </footer>
-
-    <!-- Scripts -->
-    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
-    <script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
-    <script src="{% static 'assets/js/browser.min.js' %}"></script>
-    <script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
-    <script src="{% static 'assets/js/util.js' %}"></script>
-    <script src="{% static 'assets/js/main.js' %}"></script>
-
-</body>
-
+	</body>
 </html>
 {% endblock content %}
