@@ -26,3 +26,14 @@ class Pizza(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Topping(models.Model):
+    """Topping on pizza"""
+
+    name = models.CharField(max_length=256)
+    pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
